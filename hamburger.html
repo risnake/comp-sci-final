@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>George I. Sanchez Computer Science</title>
+	<style>
+		.boxes{
+			background:darkblue;
+			width:30px;
+			height:5px;
+			transition:2s;
+			margin-bottom:20px;
+			position:absolute;
+		}
+		#box2{
+			margin-top:10px;
+		}
+		#box3{
+			margin-top:20px;
+		}
+		#box4{
+			margin-top:30px;
+		}
+		#box5{
+			margin-left:30px;
+		}
+		#box6{
+			margin-top:10px;
+			margin-left:30px;
+		}
+		#box7{
+			margin-top:20px;
+			margin-left:30px;
+		}
+		#box8{
+			margin-top:30px;
+			margin-left:30px;
+		}
+		#mainButton{
+			height:35px;
+			width:60px;
+			transition:2s;
+			padding:5px;
+			position:absolute;
+		}
+		#menuButton{
+			transition:1.5s;
+			position:absolute;
+		}
+		#menuButton:hover{
+			transform:rotate(180deg);
+			background:gold;
+		}
+		#menu{
+			background-image:linear-gradient(to right,darkblue, darkblue,gold);
+			width:0px;
+			transition:1.5s width;
+			visibility:hidden;
+			position:absolute;
+			margin-top:40px;
+		}
+		.menuAnchorLinks{
+			color:white;
+			font-size:25px;
+			margin-left:10px;
+			text-decoration:none;
+		}
+		.menuAnchorLinks:hover{
+			text-decoration:line-through;
+		}
+		
+	</style>
+	<script>
+		function menus()
+		{
+			if (document.getElementById("menu").style.visibility=="hidden")
+			{
+				document.getElementById("menu").style.visibility="visible";
+				document.getElementById("menu").style.width = "200px";
+			}
+			else
+			{
+				document.getElementById("menu").style.visibility="hidden";
+				document.getElementById("menu").style.width = "0px";
+			}
+		}
+      		function hideMenu()
+		{
+        		document.getElementById("menu").style.visibility = "hidden";
+			document.getElementById("menu").style.width = "0px";
+		}
+		function transform1()
+		{
+			document.getElementById("box1").style.transform = "rotate(90deg) translate(15px, 12.7px)";
+			document.getElementById("box2").style.width = "27px";
+			document.getElementById("box2").style.transform = "translate(0px, -10.5px) ";
+			document.getElementById("box3").style.transform = "translate(0px, 10.5px) ";
+			document.getElementById("box3").style.width = "27px";
+			document.getElementById("box1").style.background = "gold";
+			document.getElementById("box2").style.background = "gold";
+			document.getElementById("box3").style.background = "gold";
+			document.getElementById("box4").style.transform = "translate(33px, -30.5px) ";
+			document.getElementById("box4").style.width = "27px";
+			document.getElementById("box4").style.background = "gold";
+			document.getElementById("box5").style.transform = "translate(2.6px, 15px) ";
+			document.getElementById("box5").style.background = "gold";
+			document.getElementById("box5").style.width = "27px";
+			document.getElementById("box6").style.transform = "rotate(90deg) translate(-2px, 2.4px)";
+			document.getElementById("box6").style.width = "15px";
+			document.getElementById("box6").style.background = "gold";
+			document.getElementById("box7").style.transform = "translate(2.8px, 10.5px)";
+			document.getElementById("box7").style.background = "gold";
+			document.getElementById("box7").style.width = "27px";
+			document.getElementById("box8").style.transform = "rotate(90deg) translate(-9px, -20px)";
+			document.getElementById("box8").style.width = "15px";
+			document.getElementById("box8").style.background = "gold";
+			document.getElementById("mainButton").style.background="darkblue";
+		}
+		function transform2()
+		{
+			document.getElementById("box1").style.transform = "rotate(0deg) translate(0px, 0px)";
+			document.getElementById("box1").style.background = "darkblue";
+			document.getElementById("box2").style.width = "30px";
+			document.getElementById("box2").style.transform = "translate(0px, 0px) ";
+			document.getElementById("box2").style.background = "darkblue";
+			document.getElementById("box3").style.transform = "translate(0px, 0px) ";
+			document.getElementById("box3").style.width = "30px";
+			document.getElementById("box3").style.background = "darkblue";
+			document.getElementById("box4").style.transform = "translate(0px, 0px)";
+			document.getElementById("box4").style.width = "30px";
+			document.getElementById("box4").style.background = "darkblue";
+			document.getElementById("box5").style.transform = "translate(0px, 0px) ";
+			document.getElementById("box5").style.background = "darkblue";
+			document.getElementById("box5").style.width = "30px";
+			document.getElementById("box6").style.transform = "rotate(0deg) translate(0px, 0px)";
+			document.getElementById("box6").style.width = "30px";
+			document.getElementById("box6").style.background = "darkblue";
+			document.getElementById("box7").style.transform = "translate(0px, 0px)";
+			document.getElementById("box7").style.background = "darkblue";
+			document.getElementById("box7").style.width = "30px";
+			document.getElementById("box8").style.transform = "rotate(0deg) translate(0px, 0px)";
+			document.getElementById("box8").style.width = "30px";
+			document.getElementById("box8").style.background = "darkblue";
+			document.getElementById("mainButton").style.background="transparent";
+		}
+	</script>
+	</head>
+	<body onload="menus()">		
+		<div id="mainButton" onmouseover="transform1()" onmouseout="transform2()" onclick="menus()">
+			<div id="box1" class="boxes" ></div>
+			<div id="box2" class="boxes" ></div>
+			<div id="box3" class="boxes" ></div>
+			<div id="box4" class="boxes" ></div>
+			<div id="box5" class="boxes" ></div>
+			<div id="box6" class="boxes" ></div>
+			<div id="box7" class="boxes" ></div>
+			<div id="box8" class="boxes" ></div>
+		</div>
+		<div id="menu">
+			<a href = "index.html" class="menuAnchorLinks">Home</a>
+			<br><br>
+			<a href = "period1.html" class="menuAnchorLinks">1st<>Period</a>
+			<br><br>
+			<a href = "period2.html" class="menuAnchorLinks">2nd<>Period</a>
+			<br><br>
+			<a href = "period4.html" class="menuAnchorLinks">4th<>Period</a>
+			<br><br>
+			<a href = "period5.html" class="menuAnchorLinks">5th<>Period</a>
+			<br><br>
+			<a href = "period6.html" class="menuAnchorLinks">6th<>Period</a>
+			<br><br>
+			<a href = "period7.html" class="menuAnchorLinks">7th<>Period</a>
+		        <br><br>
+		        <a href = "" class="menuAnchorLinks">GIS<>South </a>
+			<br><br>
+		</div>
+	</body>
+</html>
